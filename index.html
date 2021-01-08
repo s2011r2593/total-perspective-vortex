@@ -2,10 +2,65 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Hello wasm-pack!</title>
+    <link rel='icon' type='image/png' href='/fav.png' />
+    <link rel='stylesheet' href='index.css' />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+    <title>Total Perspective Vortex</title>
   </head>
   <body>
     <noscript>This page contains webassembly and javascript content, please enable javascript in your browser.</noscript>
+    <div id='main'>
+      <div id='display'>
+        <canvas id='dispcanv' width='1' height='1' />
+      </div>
+      <div id='ctrlpanel'>
+        <div id='buttonpanel'>
+          <input class='fileupload' type="file" id="csvupload" />
+          <button class='styledbutton' id="btn1">Initialize Perspective Vortex</button>
+          <button class='styledbutton' id="btn2">Log Airfoil Points</button>
+        </div>
+        <div id='fseditor'>
+          <!-- VELOCITY | AOA | DENSITY | PRESSURE -->
+          <div class='column'>
+            <div>
+              <label>Freestream Velocity:</label>
+              <br />
+              <span class='valueinput'>
+                <input class='valueeditor' id='q_inf' type="text" value="2.2" />
+                <p class='unit'>(m∙s^-1)</p>
+              </span>
+            </div>
+            <div>
+              <label>Angle of Attack:</label>
+              <br />
+              <span class='valueinput'>
+                <input class='valueeditor' id='aoa' type="text" value="0" />
+                <p class='unit'>(rad)</p>
+              </span>
+            </div>
+          </div>
+          <div class='column'>
+            <div>
+              <label>Freestream Density:</label>
+              <br />
+              <span class='valueinput'>
+                <input class='valueeditor' id='rho_inf' type="text" value="1.225" />
+                <p class='unit'>(kg∙m^-3)</p>
+              </span>
+            </div>
+            <div>
+              <label>Freestream Pressure:</label>
+              <br />
+              <span class='valueinput'>
+                <input class='valueeditor' id='p_inf' type="text" value="101325" />
+                <p class='unit'>(Pa)</p>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
     <script src="./bootstrap.js"></script>
   </body>
 </html>
